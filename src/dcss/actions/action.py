@@ -37,7 +37,7 @@ class Action:
 
         Command.AUTO_EXPLORE: {'msg': 'key', 'keycode': ord('o')},
         Command.INTERLEVEL_TRAVEL: {'text': 'G', 'msg': 'input'},
-        Command.FIND_ITEMS: {'msg': 'key', "keycode": 6},
+        # Command.FIND_ITEMS: {'msg': 'key', "keycode": 6},
         #  Todo - see github issue 9
         # Command.SET_WAYPOINT: {...}
 
@@ -91,10 +91,6 @@ class Action:
         Command.TELL_ALLIES: {'text': 'I', 'msg': 'input'},
         Command.REDO_PREVIOUS_COMMAND: {'text': '`', 'msg': 'input'},
 
-        Command.SAVE_GAME_AND_EXIT: {'text': 'S', 'msg': 'input'},
-        Command.SAVE_AND_EXIT_WITHOUT_QUERY: {'msg': 'key', "keycode": 19},
-        Command.ABANDON_CURRENT_CHARACTER_AND_QUIT_GAME: {'msg': 'key', "keycode": 17},
-
         Command.DISPLAY_CHARACTER_STATUS: {'text': '@', 'msg': 'input'},
         Command.SHOW_SKILL_SCREEN: {'text': 'm*', 'msg': 'input'},
         Command.CHARACTER_OVERVIEW: {'text': '%', 'msg': 'input'},
@@ -115,9 +111,9 @@ class Action:
         Command.EXAMINE_LEVEL_MAP: {'text': 'X', 'msg': 'input'},
         Command.LIST_MONSTERS_ITEMS_FEATURES_IN_VIEW: {'msg': 'key', "keycode": 24},
         Command.TOGGLE_VIEW_LAYERS: {'text': '|', 'msg': 'input'},
-        Command.SHOW_DUNGEON_OVERVIEW: {'msg': 'key', "keycode": 15},
+        # Command.SHOW_DUNGEON_OVERVIEW: {'msg': 'key', "keycode": 15},
         Command.TOGGLE_AUTO_PICKUP: {'msg': 'key', "keycode": 1},
-        Command.SET_TRAVEL_SPEED_TO_CLOSEST_ALLY: {'msg': 'key', "keycode": 5},
+        # Command.SET_TRAVEL_SPEED_TO_CLOSEST_ALLY: {'msg': 'key', "keycode": 5},
 
         Command.SHOW_INVENTORY_LIST: {'text': 'i', 'msg': 'input'},
         Command.INSCRIBE_ITEM: {'msg': 'input', 'data': [123]},
@@ -130,8 +126,12 @@ class Action:
         Command.EXIT_MENU: {'msg': 'key', 'keycode': 27},
         Command.SHOW_PREVIOUS_GAME_MESSAGES: {'msg': 'key', 'keycode': 16},
         Command.RESPOND_YES_TO_PROMPT: {'text': 'Y', 'msg': 'input'},
+        Command.RESPOND_YES_TO_PROMPT_FULL: {'text': 'Yes\r', 'msg': 'input'},
         Command.RESPOND_NO_TO_PROMPT: {'text': 'N', 'msg': 'input'},
         Command.ENTER_KEY: {'text': '\r', 'msg': 'input'},
+        Command.SAVE_GAME_AND_EXIT: {'text': 'S', 'msg': 'input'},
+        Command.SAVE_AND_EXIT_WITHOUT_QUERY: {'msg': 'key', "keycode": 19},
+        Command.ABANDON_CURRENT_CHARACTER_AND_QUIT_GAME: {'msg': 'key', "keycode": 17},
     }
 
     # the order of letters and symbols in this string should match the order of MenuChoice enum options
