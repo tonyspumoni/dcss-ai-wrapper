@@ -6,6 +6,8 @@ class Command(Enum):
     These are taken from the in-game manual of crawl.
     """
 
+    NOTHING = 0
+
     #  Movement
     MOVE_OR_ATTACK_SW = 1
     MOVE_OR_ATTACK_S = 2
@@ -126,3 +128,5 @@ class Command(Enum):
 
     # Menu specific actions
     EXAMINE_TILE_IN_EXPLORE_MENU = 94
+
+    SPACE = 95

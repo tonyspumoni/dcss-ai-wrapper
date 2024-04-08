@@ -228,41 +228,41 @@ class GameState:
                 +--------------+---------------------------------------+------------------------+
                 | 16           | Experience until next level           | 0-100 percentage       |
                 +--------------+---------------------------------------+------------------------+
-                | 14           | God                                   | Int                    |
+                | 17           | God                                   | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 15           | Piety Level                           | Int                    |
+                | 18           | Piety Level                           | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 16           | Spell slots left                      | Int                    |
+                | 19           | Spell slots left                      | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 17           | gold                                  | Int                    |
+                | 20           | gold                                  | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 18           | rFire                                 | Int                    |
+                | 21           | rFire                                 | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 19           | rCold                                 | Int                    |
+                | 22           | rCold                                 | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 20           | rNeg                                  | Int                    |
+                | 23           | rNeg                                  | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 21           | rPois                                 | Int                    |
+                | 24           | rPois                                 | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 22           | rElec                                 | Int                    |
+                | 25           | rElec                                 | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 23           | rCorr                                 | Int                    |
+                | 26           | rCorr                                 | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 24           | MR                                    | Int                    |
+                | 27           | MR                                    | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 25           | Stealth                               | Int                    |
+                | 28           | Stealth                               | Int                    |
                 +--------------+---------------------------------------+------------------------+
-                | 26           | HPRegen per turn                      | Float                  |
+                | 29           | HPRegen per turn                      | Float                  |
                 +--------------+---------------------------------------+------------------------+
-                | 27           | MPRegen per turn                      | Float                  |
+                | 30           | MPRegen per turn                      | Float                  |
                 +--------------+---------------------------------------+------------------------+
-                | 28           | See invisible                         | Boolean                |
+                | 31           | See invisible                         | Boolean                |
                 +--------------+---------------------------------------+------------------------+
-                | 30           | Faith                                 | Boolean                |
+                | 32           | Faith                                 | Boolean                |
                 +--------------+---------------------------------------+------------------------+
-                | 31           | Spirit                                | Boolean                |
+                | 33           | Spirit                                | Boolean                |
                 +--------------+---------------------------------------+------------------------+
-                | 32           | Reflect                               | Boolean                |
+                | 34           | Reflect                               | Boolean                |
                 +--------------+---------------------------------------+------------------------+
                 | 33           | Harm                                  | Boolean                |
                 +--------------+---------------------------------------+------------------------+
@@ -1859,6 +1859,12 @@ class GameState:
             elif k == 'unarmed_attack':
                 self.player_unarmed_attack = data[k]
 
+            elif k == 'explore':
+                self.explore = data[k]
+
+            elif k == 'time_last_input':
+                self.time_last_input = data[k]
+
             elif k in ['msg', 'inv', 'quiver_item', 'quiver_available', 'quiver_desc', 'launcher_item', 'equip',
                        'unarmed_attack_colour']:
                 # these are processed elsewhere or are irrelevant
@@ -1897,6 +1903,8 @@ class GameState:
                         current_status_effects.add(StatusEffect.UNABLE_TO_BERSERK_STATUS_EFFECT)
                     elif v == 'Slow':
                         current_status_effects.add(StatusEffect.SLOW_STATUS_EFFECT)
+                    elif v == 'Attr':
+                        current_status_effects.add(StatusEffect.ATTRACT_STATUS_EFFECT)
                     else:
                         logger.critical("******* UNKNOWN STATUS VALUE - PLEASE SUBMIT GITHUB PULL REQUEST TO UPDATE GAME KNOWLEDGE *******")
                         print("light: {}".format(v))

@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import Enum, auto
 
 
 class StatusEffect(Enum):
@@ -101,7 +101,7 @@ class StatusEffect(Enum):
     WISP_STATUS_EFFECT = 91
     ZOT_STATUS_EFFECT = 92
     UNABLE_TO_BERSERK_STATUS_EFFECT = 93  # happens immediately after going berserk
-
+    ATTRACT_STATUS_EFFECT = auto()
 
 class StatusEffectMapping:
 

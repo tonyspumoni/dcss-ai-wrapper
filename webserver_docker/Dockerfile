@@ -25,14 +25,14 @@ RUN mkdir dcss
 WORKDIR /dcss/
 RUN git clone --recurse-submodules -j8 https://github.com/crawl/crawl.git crawl/
 WORKDIR /dcss/crawl/
-RUN git reset --hard "d7a4d63c155831395aa76a5b27c080510dfb948e"
+#RUN git reset --hard "d7a4d63c155831395aa76a5b27c080510dfb948e"
 
 # copying sprint files from ai-wrapper to dcss folder
-COPY ../custom_sprints/* /dcss/crawl/crawl-ref/source/dat/des/sprint
+# COPY ../custom_sprints/* /dcss/crawl/crawl-ref/source/dat/des/sprint
 
 # compile crawl
 WORKDIR /dcss/crawl/crawl-ref/source/
-RUN make install prefix=/usr/local WEBTILES=y
+RUN make -j16 install prefix=/usr/local WEBTILES=y
 
 # RCS is a folder that is used by players, need to create it for webserver to work correctly
 RUN mkdir /dcss/crawl/crawl-ref/source/rcs/
@@ -52,4 +52,4 @@ RUN pip install tornado pyyaml
 WORKDIR /dcss/crawl/crawl-ref/source
 
 # Run the webserver
-CMD ["python", "webserver/server.py" ]
+CMD ["python", "webserver/server.py"]

@@ -23,6 +23,9 @@ class MyAgent(BaseAgent):
 
     def get_action(self, gamestate: GameState):
         self.gamestate = gamestate
+        if gamestate.game_time:
+            print(gamestate.game_time)
+            print(gamestate.game_turn)
         # get all possible actions
         actions = Action.get_all_move_commands()
         # pick an action at random

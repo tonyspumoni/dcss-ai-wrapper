@@ -27,5 +27,8 @@ setuptools.setup(
         "autobahn",
         "nested-lookup",
         "websockets",
+        "loguru",
+        "json5",
+        "icecream"
     ],
 )
